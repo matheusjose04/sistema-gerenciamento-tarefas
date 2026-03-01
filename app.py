@@ -1,32 +1,64 @@
 import os
-
-os.system('cls')
 from src.models.tarefa import Tarefa
-
-print("===== TESTE 1 - Prioridade menor que 1 =====")
-t1 = Tarefa("Teste", "Desc", -1)
-print(t1._prioridade)  # esperado: 1
+from src.models.gerenciador import GerenciadorDeTarefas
 
 
-print("===== TESTE 2 - Prioridade maior que 5 =====")
-t2 = Tarefa("Teste", "Desc", 6)
-print(t2._prioridade)  # esperado: 5
+def menu():
+        print("""
+        ==================================================
+                📋 SISTEMA DE GERENCIAMENTO DE TAREFAS
+        ==================================================
 
+        [1] Adicionar tarefa
+        [2] Listar tarefas
+        [3] Listar pendentes
+        [4] Listar concluídas
+        [5] Marcar como concluída
+        [6] Remover tarefa
+        [7] Mostrar totais
 
-print("===== TESTE 3 - Prioridade válida =====")
-t3 = Tarefa("Teste", "Desc", 3)
-print(t3._prioridade)  # esperado: 3
+        [0] Sair
 
+        ==================================================
+        """)
 
-print("===== TESTE 4 - Estado inicial =====")
-print(t3._concluida)  # esperado: False
+        try:
+            valor_permitidos = range(0, 8)
+            opcao = int(input('Digite a sua opção: '))
 
+            if opcao in valor_permitidos:
+                return opcao
+            else:
+                print('Opção inválida. Escolha um número do menu.')
 
-print("===== TESTE 5 - Marcar concluída =====")
-t3.marcar_concluida()
-print(t3._concluida)  # esperado: True
+        except ValueError:
+            print('Digite apenas números.')
+def adicionar_tarefa(ger):
+     nova_tarefa = Tarefa(titulo = input('Digite o titulo da tarefa: '),
+                        descricao = input('escreva a descricao da tarefa: '),
+                        prioridade = int(input('qual prioridade de 1 a 5: ')),
+                        )
+     ger.adicionar_tarefa(nova_tarefa)
+     print(f'tarefa adicionada com susesso')
+     
 
+                
+def main():
+    ger = GerenciadorDeTarefas() 
+    while True:
+        opcao = menu()
+        match opcao:
+             case 0:
+                  os.system('cls')
+                  break
+             case 1:
+                  os.system('cls')
+                  adicionar_tarefa(ger)
+             case 2:
+                  os.system('cls')
+                  ger.listar_tarefas()
+                  input("Pressione ENTER para voltar ao menu...")
+                  os.system("cls")
 
-print("===== TESTE 6 - Voltar para pendente =====")
-t3.marcar_pendente()
-print(t3._concluida)  # esperado: False
+if __name__ == "__main__":
+     main()
