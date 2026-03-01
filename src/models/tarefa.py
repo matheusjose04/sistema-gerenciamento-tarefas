@@ -10,3 +10,7 @@ class Tarefa:
         self._concluida = True
     def marcar_pendente(self):
         self._concluida = False
+
+    @property
+    def status(self):
+        return "Concluida" if self._concluida else "Pendente"
