@@ -27,7 +27,7 @@ class GerenciadorDeTarefas:
         return contador
 
     def listar_tarefas(self):
-        
+        self.ondem_de_prioridade()
 
         print(f'{"Titulo".ljust(25)} | {"Prioridade".ljust(25)} | {"Status".ljust(25)}')
         for t in self._tarefas:
