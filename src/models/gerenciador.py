@@ -48,6 +48,7 @@ class GerenciadorDeTarefas:
 
 
     def listar_pendentes(self):
+        self.ondem_de_prioridade()
         pendentes = [t for t in self._tarefas if t._concluida == False]
 
         if not pendentes:

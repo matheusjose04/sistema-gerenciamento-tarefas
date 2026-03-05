@@ -59,6 +59,12 @@ def main():
                   ger.listar_tarefas()
                   input("Pressione ENTER para voltar ao menu...")
                   os.system("cls")
+             case 3:
+                  os.system('cls')
+                  ger.listar_pendentes()
+                  input("Pressione ENTER para voltar ao menu...")
+                  os.system("cls")                  
 
+               
 if __name__ == "__main__":
      main()
