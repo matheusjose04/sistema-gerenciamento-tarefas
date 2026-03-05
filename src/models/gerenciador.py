@@ -27,6 +27,8 @@ class GerenciadorDeTarefas:
         return contador
 
     def listar_tarefas(self):
+        
+
         print(f'{"Titulo".ljust(25)} | {"Prioridade".ljust(25)} | {"Status".ljust(25)}')
         for t in self._tarefas:
             print(f'{t._titulo.ljust(25)} | {str(t._prioridade).ljust(25)} | {t.status.ljust(25)}')
@@ -54,4 +56,12 @@ class GerenciadorDeTarefas:
         print(f'{"Titulo".ljust(25)} | {"Prioridade".ljust(25)} | {"Status".ljust(25)}')
         for t in pendentes:
             print(f'{t._titulo.ljust(25)} | {str(t._prioridade).ljust(25)} | {t.status.ljust(25)}')
+        
+    def ondem_de_prioridade(self):
+        for i in range(len(self._tarefas)):
+            for y in range(len(self._tarefas) - 1):
+                if self._tarefas[y + 1].prioridade < self._tarefas[y].prioridade:
+                     self._tarefas[y], self._tarefas[y + 1] = self._tarefas[y + 1], self._tarefas[y]
+                            
+
         
