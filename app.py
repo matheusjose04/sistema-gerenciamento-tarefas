@@ -70,6 +70,15 @@ def main():
                   input("Pressione ENTER para voltar ao menu...")
                   os.system("cls")
              case 5:
-                  concluido = input('')
+                  marcador_de_concluido = input("vc quer marcar concluido (Sim/nao)? ")
+                  if marcador_de_concluido.capitalize() == 'sim'.capitalize():
+                       for i, Tarefa in enumerate(ger._tarefas, start=1):
+                            print(f"{i} - {Tarefa._titulo}")
+                  else:
+                       remarcar_pendente = input('vc quer volta uma tarefa para pendete (sim/nao)? ')
+                       if remarcar_pendente.capitalize() == 'nao'.capitalize():
+                            pass
+                       else:
+                            os.system('cls')
 if __name__ == "__main__":
      main()
