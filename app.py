@@ -64,7 +64,12 @@ def main():
                   ger.listar_pendentes()
                   input("Pressione ENTER para voltar ao menu...")
                   os.system("cls")                  
-
-               
+             case 4:
+                  os.system('cls')
+                  ger.listar_concluidas()
+                  input("Pressione ENTER para voltar ao menu...")
+                  os.system("cls")
+             case 5:
+                  concluido = input('')
 if __name__ == "__main__":
      main()
