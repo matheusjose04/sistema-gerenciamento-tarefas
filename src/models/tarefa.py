@@ -1,4 +1,4 @@
-# criando a class tarefa
+
 class Tarefa:
     def __init__(self, titulo, descricao, prioridade, ):
         self._titulo = titulo.strip( )

@@ -1,0 +1,26 @@
+[
+    {
+        "titulo": "Academia",
+        "descricao": "Treino de pernas e 20 minutos de cardio.",
+        "prioridade": 3,
+        "concluida": false
+    },
+    {
+        "titulo": "Estudar Python",
+        "descricao": "Revisar loops while e tratamento de erros com try/except.",
+        "prioridade": 4,
+        "concluida": true
+    },
+    {
+        "titulo": "Comprar Leite",
+        "descricao": "Ir ao mercado e comprar 2 litros de leite desnatado.",
+        "prioridade": 5,
+        "concluida": false
+    },
+    {
+        "titulo": "Pagar Conta de Luz",
+        "descricao": "Vencimento no dia 20. Pagar via Pix.",
+        "prioridade": 5,
+        "concluida": true
+    }
+]

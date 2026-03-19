@@ -107,6 +107,7 @@ def main():
                         
                         indice = ler_inteiro("Escolha a tarefa: ", 1, len(pendentes))
                         pendentes[indice - 1].marcar_concluida()
+                        ger.salvar()
                         print("✅ Tarefa concluída!")
 
                 else:
@@ -121,6 +122,7 @@ def main():
                             
                             indice = ler_inteiro("Escolha a tarefa: ", 1, len(concluidas))
                             concluidas[indice - 1].marcar_pendente()
+                            ger.salvar()
                             print("✅ Tarefa voltou para pendente!")
 
                 input("\nENTER para voltar...")
@@ -135,6 +137,7 @@ def main():
 
                     indice = ler_inteiro("Qual tarefa remover: ", 1, len(ger._tarefas))
                     ger.remover_tarefa(ger._tarefas[indice - 1])
+                    ger.salvar()
                     print("🗑️ Tarefa removida!")
 
                 input("\nENTER para voltar...")
